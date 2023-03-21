@@ -15,7 +15,7 @@ char low;
 for (low = 'a'; low <= 'z'; low++)
   printf("%c",low);
 for (low = 'A'; low <= 'Z'; low++)
-  printf("5c",low);
+  printf("%c",low);
  printf("\n");
 
 return (0);
