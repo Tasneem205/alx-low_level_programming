@@ -1,14 +1,14 @@
-/**
-*print_alphabet - function prints the alphabet as output
+/*
+* print_alphabet - prints the alphabet
 *
-*Return:return 0
+* Return - void
 */
 
-void print_alphabet()
+void print_alphabet(void)
 {
 	char i;
 
-	for (i = 'a'; i <= 'z'; i++)
+	for (i = 'a'; i < 'z'; i++)
 	{
 		_putchar(i);
 	}
