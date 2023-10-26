@@ -12,7 +12,7 @@ int is_palindrome(char *s);
 int wildcmp(char *s1, char *s2);
 void _putchar(char);
 int _sqrt(int n, int x);
-int is_prine(int, int);
+int is_prime(int, int);
 int find_strlen(char *s);
 int check_palindrome(char *s, int len, int index);
 
