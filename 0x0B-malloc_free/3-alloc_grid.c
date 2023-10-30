@@ -1,9 +1,11 @@
 #include "main.h"
+#include <stddef.h>
 #include <stdlib.h>
+
 /**
 * alloc_grid - returns a pointer to a
 *2 dimensional array of integers.
-*@width: width of array
+*@width: width oàf array
 *@height: height of array
 *
 *Return: pointer to the array
@@ -11,37 +13,37 @@
 
 int **alloc_grid(int width, int height)
 {
-	if (width <= 0 || height <= 0)
-		return (NULL);
-	int **p;
+	int **array;
+	int i = 0, j;
 
-	**p = (int **) calloc(height, sizeof(int *));
-	if (!p)
+	if (width == 0 || height == 0)
 		return (NULL);
-	for (int i = 0; i < height; ++i)
+	array = (int **) malloc(sizeof(int *) * height);
+	if (array != NULL)
 	{
-		int *temp;
-
-		*temp = (int *) calloc(width, sizeof(int));
-		if (!temp)
+		for (; i < height; i++)
 		{
-			/* then there is no enough memory, and we need to free our allocated memo.*/
-			while (i >= 0)
+			array[i] = (int *) malloc(sizeof(int) * width);
+			if (array[i] != NULL)
 			{
-				free(p[i]);
-				i--;
+				for (j = 0; j < width; j++)
+					array[i][j] = 0;
 			}
-			free(p);
-			return (NULL);
-		}
-		else
-		{
-			for (int j = 0; j < width; ++j)
+			else
 			{
-				printf("%d", p[i][j]);
+				while (i >= 0)
+				{
+					free(array[i]);
+					i--;
+				}
+				free(array);
+				return (NULL);
 			}
-			p[i] = temp;
 		}
+		return (array);
 	}
-	return (p);
+	else
+	{
+		return (NULL);
+	}
 }
