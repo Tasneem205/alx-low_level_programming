@@ -1,5 +1,12 @@
 #include "main.h"
 
+unsigned int min(unsigned int x, unsigned int y)
+{
+	if (x > y)
+		return (x);
+	else
+		return (y);
+}
 
 /**
 * _realloc - reallocates a memory block
