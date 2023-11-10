@@ -15,7 +15,7 @@ void print_all(const char * const format, ...)
 
 	while (format[n] != '\0')
 		n++;
-	
+
 	va_start(vp, format);
 
 	while (i < n)
@@ -38,7 +38,7 @@ void print_all(const char * const format, ...)
 				printf("%s", s);
 				break;
 		}
-		if (i != n-1)
+		if (i != n - 1)
 			printf(", ");
 		i++;
 	}
