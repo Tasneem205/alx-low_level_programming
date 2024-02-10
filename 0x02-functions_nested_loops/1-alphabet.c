@@ -1,5 +1,9 @@
 #include "main.h"
-
+/**
+ * print_alphabet - prints the lowercase english letters
+ *
+ * Return: void
+ */
 void print_alphabet(void)
 {
 	int i;
