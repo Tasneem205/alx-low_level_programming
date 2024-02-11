@@ -11,7 +11,7 @@ void print_array(int *a, int n)
 {
 	int i, len;
 
-	for (len = 0; a[len] != '\0'; len++)
+	for (len = 0; a[len] != '\0'; len++);
 
 	if (len > n && n >= 0)
 	{
