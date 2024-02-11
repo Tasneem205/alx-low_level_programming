@@ -17,11 +17,11 @@ void puts_half(char *str)
 		if (len % 2 == 0)
 		{
 			len = len / 2;
+			len += 1;
 		}
 		else
 		{
 			len = (len + 1) / 2;
-			len += 1;
 		}
 		while (str[len] != '\0')
 		{
