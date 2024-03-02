@@ -1,4 +1,4 @@
-#include <main.h>
+#include "main.h"
 
 #define USAGE "Usage: cp file_from file_to\n"
 #define ERR_NOREAD "Error: Can't read from file %s\n"
@@ -26,11 +26,11 @@ int main(int argc, char **argv)
 		dprintf(STDERR_FILENO, ERR_NOREAD, argv[1]), exit(98);
 	to_fd = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, PERMISSION);
 	if (to_fd == -1)
-		dprintf(STDERR_FILENO, ERR_NOWITE, argv[2]), exit(99);
+		dprintf(STDERR_FILENO, ERR_NOWRITE, argv[2]), exit(99);
 	
 	while ((b = read(from_fd, buf, READ_BUF_SIZE)) > 0)
-		if (wirte(to_fd, buf, b) != b)
-			dpintf(STDERR_FILENO, ERR_NOWRITE, argv[2]), exit(99);
+		if (write(to_fd, buf, b) != b)
+			dprintf(STDERR_FILENO, ERR_NOWRITE, argv[2]), exit(99);
 	if (b == -1)
 		dprintf(STDERR_FILENO, ERR_NOREAD, argv[1]), exit(98);
 	
