@@ -9,12 +9,12 @@ char *leet(char *str)
 {
 	int index1 = 0, index2 = 0;
 
-	char *arr = {'a', 'A', 'e', 'E', 'o', 'O', 't', 'T', 'l', 'L'};
-	char *lee = {'4', '4', '3', '3', '0', '0', '7', '7', '1', '1'};
+	char *arr = "aAeEoOtTlL";
+	char *lee = "4433007711";
 
 	while (str[index1])
 	{
-		for (index2 = 0' index2 < 10; index2++)
+		for (index2 = 0; index2 < 10; index2++)
 		{
 			if (str[index1] == arr[index2])
 				str[index1] = lee[index2];
