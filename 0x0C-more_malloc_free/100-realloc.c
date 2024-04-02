@@ -1,5 +1,12 @@
 #include "main.h"
 
+/**
+ * min - returns minimum of two numbers
+ * @x: first number
+ * @y: second number
+ * Return: the minimum of them
+ */
+
 unsigned int min(unsigned int x, unsigned int y)
 {
 	if (x > y)
