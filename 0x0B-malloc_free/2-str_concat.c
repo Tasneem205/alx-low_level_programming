@@ -14,8 +14,8 @@ char *str_concat(char *s1, char *s2)
 	char *p;
 	int i;
 
-	if (s1 == NULL && s2 == NULL)
-		return (NULL);
+	/*if (s1 == NULL && s2 == NULL)
+		return ("");*/
 
 	s1_size = 0;
 	s2_size = 0;
@@ -26,7 +26,6 @@ char *str_concat(char *s1, char *s2)
 	if (s2 == NULL)
 		s2 = "";
 
-	
 	while (s1[s1_size])
 		s1_size++;
 	while (s2[s2_size])
