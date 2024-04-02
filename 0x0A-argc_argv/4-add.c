@@ -1,7 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdio.h>
 
+int is_digit(char *str);
 /**
 * main - a program that adds positive numbers.
 * @argc: arguments count
@@ -10,28 +12,37 @@
 */
 int main(int argc, char *argv[])
 {
-	/* we'll initialize our final result with 0 to add on */
-	int i, result = 0;
+	int i, result = 0, n;
 
-	/* start the loop at 1, remember that [0] is the program name */
 	for (i = 1; i < argc; i++)
 	{
-		/* use atoi to convert the current number to a an int */
-		int n = atoi(argv[i]);
-
-		/* if atoi returned 0, that means we got an invalid characters */
-		if (n == 0)
+		n = atoi(argv[i]);
+		if (!is_digit(argv[i]))
 		{
 			printf("Error\n");
 			return (1);
 		}
-
-		/* update our result to have this number added */
 		result += n;
 	}
-
-	/* print our final result and return success */
 	printf("%d\n", result);
 	return (0);
 }
 
+/**
+ * is_digit - finds if this string is digits
+ * @str: the string
+ * Return: True if digits false if not
+ */
+int is_digit(char *str)
+{
+	int i;
+
+	i = 0;
+	while(str[i])
+	{
+		if (str[i] < '0' || str[i] > '9')
+			return (0);
+		i++;
+	}
+	return (1);
+}
