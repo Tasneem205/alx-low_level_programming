@@ -3,7 +3,7 @@
 
 /**
  * print_dog - prints a dog with it's params
- * @dog: the dog structure
+ * @d: the dog structure
  * Return: null
  */
 void print_dog(struct dog *d)
@@ -18,6 +18,6 @@ void print_dog(struct dog *d)
 		{
 			printf("Name: %s\n", d->name);
 		}
-		printf("Age: %f\nOnwer: %s\n", d->age, d->owner);
+		printf("Age: %f\nOwner: %s\n", d->age, d->owner);
 	}
 }
