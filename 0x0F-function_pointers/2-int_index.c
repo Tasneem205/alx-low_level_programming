@@ -2,8 +2,8 @@
 /**
  * int_index - searches for an integer
  * @array: list of numbers
- * size: size of the array
- * cmp: pointer to a function
+ * @size: size of the array
+ * @cmp: pointer to a function
  *
  * Return: index.
  */
