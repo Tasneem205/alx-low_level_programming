@@ -4,11 +4,12 @@
 
 /**
  * main - check the code
- *
+ * @argc: the count of the arguments
+ * @argv: pointer to the start of the array of the arguments
  * Return: Always 0.
  */
 
- int main(int __attribute__((__unused__)) argc, char *argv[])
+int main(int __attribute__((__unused__)) argc, char *argv[])
 {
 	int num1, num2;
 	char *op;
