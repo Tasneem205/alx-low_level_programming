@@ -24,22 +24,28 @@ void print_all(const char * const format, ...)
 		{
 			case 'i':
 				printf("%d", va_arg(vp, int));
+				if (i != n - 1)
+					printf(", ");
 				break;
 			case 'f':
 				printf("%f", va_arg(vp, double));
+				if (i != n - 1)
+					printf(", ");
 				break;
 			case 'c':
 				printf("%c", va_arg(vp, int));
+				if (i != n - 1)
+					printf(", ");
 				break;
 			case 's':
 				s = va_arg(vp, char *);
 				if (s == NULL)
 					s = "(nil)";
 				printf("%s", s);
+				if (i != n - 1)
+					printf(", ");
 				break;
 		}
-		if (i != n - 1)
-			printf(", ");
 		i++;
 	}
 	printf("\n");
