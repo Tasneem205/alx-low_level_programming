@@ -9,24 +9,31 @@
 
 size_t print_listint_safe(const listint_t *head)
 {
-	const listint_t *cursor = head;
-	size_t count = 0;
-	long int diff;
+	const listint_t *tmp_n = NULL;
+	const listint_t *l_n = NULL;
+	size_t counter = 0;
+	size_t new_n;
 
-	while (cursor != NULL)
+	tmp_n = head;
+	while (tmp_n)
 	{
-		diff = cursor - cursor->next;
-		count += 1;
-		printf("[%p] %d\n", (void *)cursor, cursor->n);
-		if (diff > 0)
+		printf("[%p] %d\n", (void *)tmp_n, tmp_n->n);
+		counter++;
+		tmp_n = tmp_n->next;
+		l_n = head;
+		new_n = 0;
+		while (new_n < counter)
 		{
-			cursor = cursor->next;
+			if (tmp_n == l_n)
+			{
+				printf("-> [%p] %d\n", (void *)tmp_n, tmp_n->n);
+				return (counter);
+			}
+			l_n = l_n->next;
+			new_n++;
 		}
-		else
-		{
-			printf("-> [%p] %d\n", (void *)cursor->next, cursor->next->n);
-			break;
-		}
+		if (!head)
+			exit(98);
 	}
-	return (count);
+	return (counter);
 }
