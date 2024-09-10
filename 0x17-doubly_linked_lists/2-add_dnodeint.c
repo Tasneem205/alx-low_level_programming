@@ -3,7 +3,7 @@
 /**
  * add_dnodeint - add to the d linked list
  * @head: the head of the list
- * n: the value
+ * @n: the value
  *
  * Return: size of the list
  */
@@ -27,5 +27,5 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 		(*head)->prev = new;
 		*head = new;
 	}
-	return new;
+	return (new);
 }
